@@ -24,6 +24,8 @@ buttonRetry.addEventListener("click", function(){
 	bar.style.background = "#1365a8";
 	colorCode = (squares[getRandomNumber(squares.length)].style.background);
 	head.textContent = colorCode.toUpperCase();
+	if(buttonRetry.textContent == "Play Again")
+		buttonRetry.textContent = "New Colors";
 });
 
 colorCode = (squares[getRandomNumber(squares.length)].style.background);
