@@ -1,0 +1,44 @@
+body{
+	background-color: #212121;
+}
+
+.square{
+	border-radius: 25px;
+	background-color: white;
+	width:29%;
+	height: 29%;
+	margin: 2%;
+	padding-bottom:29%;
+	float:left;
+}
+
+.container{
+	max-width: 40%;
+	margin: 0 auto;
+	margin-top: 8%;
+	margin-bottom: 0px;
+	height: 100%;
+}
+
+h1{
+	color:white;
+	margin: 0 auto;
+}
+
+.bar{
+	background: #1365a8;
+}
+
+#colorCode{
+	letter-spacing: 3px;
+}
+
+.secondary-bar{
+	background: white;
+	margin: 0 auto;
+}
+
+button{
+	background-color: white;
+	border: none;
+}
