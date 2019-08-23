@@ -23,6 +23,7 @@ buttonRetry.addEventListener("click", function(){
 	setColors();
 	bar.style.background = "#1365a8";
 	colorCode = (squares[getRandomNumber(squares.length)].style.background);
+	displayStatus.textContent = "";
 	head.textContent = colorCode.toUpperCase();
 	if(buttonRetry.textContent == "Play Again")
 		buttonRetry.textContent = "New Colors";
