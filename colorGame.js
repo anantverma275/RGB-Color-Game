@@ -4,10 +4,11 @@ var displayStatus = document.querySelector("#status");
 var head = document.querySelector("#colorCode");
 var colorCode;
 var bar = document.querySelector(".bar");
+var n=6;
 
-function setColors(){
-	for(var i=0; i<squares.length;i++){
-		squares[i].style.backgroundColor = "rgb(" + Math.random()*256 + ", " + Math.random()*256 + ", " + Math.random()*256 + ")";
+function setColors(n){
+	for(var i=0; i<n;i++){
+		squares[i].style.backgroundColor = "rgb(" + Math.floor(Math.random()*256) + ", " + Math.floor(Math.random()*256) + ", " + Math.floor(Math.random()*256) + ")";
 	}
 }
 
@@ -15,19 +16,29 @@ function getRandomNumber(num){
 	return Math.floor( Math.random() * num);
 }
 
-setColors();
+function clearTheRest(n){
+	for(var i=n;i<6;i++)
+		squares[i].style.backgroundColor = "#212121";
+}
 
-
-
-buttonRetry.addEventListener("click", function(){
-	setColors();
-	bar.style.backgroundColor = "#1365a8";
-	colorCode = (squares[getRandomNumber(squares.length)].style.backgroundColor);
-	displayStatus.textContent = "";
+function resetThings(){
+	// if(easyButton.classList.contains("selected"))
+		// n=3;
+	// else
+		// n=6;
+	setColors(n);
+	clearTheRest(n);
+	bar.style.background = "#1365a8";
+	colorCode = (squares[getRandomNumber(n)].style.backgroundColor);
 	head.textContent = colorCode.toUpperCase();
+	displayStatus.textContent = "";
 	if(buttonRetry.textContent == "Play Again")
 		buttonRetry.textContent = "New Colors";
-});
+}
+
+setColors(n);
+
+buttonRetry.addEventListener("click", resetThings);
 
 colorCode = (squares[getRandomNumber(squares.length)].style.backgroundColor);
 head.textContent = colorCode.toUpperCase();
@@ -36,16 +47,31 @@ for(var i=0; i<squares.length;i++){
 	squares[i].addEventListener("click", function(){
 		if(this.style.backgroundColor==colorCode){
 			bar.style.backgroundColor = colorCode;
-			// alert("Correct");
 			displayStatus.textContent = "Correct!";
-			for(var k = 0; k<squares.length;k++)
+			for(var k = 0; k<n;k++)
 				squares[k].style.backgroundColor = colorCode;
 			buttonRetry.textContent = "Play Again";
 		}
 		else {
-			// alert("Incorrect");
 			displayStatus.textContent = "Try Again!"
 			this.style.backgroundColor = "#212121";
 		}
 	});
 };
+
+var easyButton = document.querySelector("#easy");
+var hardButton = document.querySelector("#hard");
+easyButton.addEventListener("click", function(){
+	n=3;
+	resetThings();
+	clearTheRest(n);
+	easyButton.classList.add("selected");
+	hardButton.classList.remove("selected");
+});
+
+hardButton.addEventListener("click", function(){
+	n=6
+	resetThings();
+	easyButton.classList.remove("selected");
+	hardButton.classList.add("selected");
+})

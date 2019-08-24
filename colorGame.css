@@ -35,10 +35,15 @@ h1{
 
 .secondary-bar{
 	background: white;
-	margin: 0 auto;
+	height: 30px;
+	text-align: center;
 }
 
 button{
 	background-color: white;
 	border: none;
+}
+
+.selected{
+	background-color: #1365a8;
 }
