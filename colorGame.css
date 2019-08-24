@@ -47,3 +47,7 @@ button{
 .selected{
 	background-color: #1365a8;
 }
+
+button:hover{
+	background-color: #1365a8;
+}
