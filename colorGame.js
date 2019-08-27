@@ -43,6 +43,7 @@ buttonRetry.addEventListener("click", resetThings);
 colorCode = (squares[getRandomNumber(squares.length)].style.backgroundColor);
 head.textContent = colorCode.toUpperCase();
 
+
 for(var i=0; i<squares.length;i++){
 	squares[i].addEventListener("click", function(){
 		if(this.style.backgroundColor==colorCode){
@@ -53,7 +54,7 @@ for(var i=0; i<squares.length;i++){
 			buttonRetry.textContent = "Play Again";
 		}
 		else {
-			displayStatus.textContent = "Try Again!"
+			displayStatus.textContent = "Try Again!";
 			this.style.backgroundColor = "#212121";
 		}
 	});
