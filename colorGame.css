@@ -1,5 +1,7 @@
 body{
 	background-color: #212121;
+	margin: 0;
+	font-family: "Consolas";
 }
 
 .square{
@@ -21,12 +23,20 @@ body{
 }
 
 h1{
+	/*line-height: 1.1;*/
+	text-align: center;
 	color:white;
 	margin: 0 auto;
+	font-weight: normal;
+}
+
+#colorCode{
+	font-size: 125%;
 }
 
 .bar{
 	background: #1365a8;
+	padding: 10px 0px 15px 0px;
 }
 
 #colorCode{
@@ -39,15 +49,35 @@ h1{
 	text-align: center;
 }
 
+#status{
+	display: inline-block;
+	width: 18%;
+}
+
 button{
+	font-weight: 725;
+	color: #1365a8;
+	text-align: center;
 	background-color: white;
 	border: none;
+	font-family: "Consolas";
+	height: 100%;
+	letter-spacing: 2px;
 }
 
 .selected{
 	background-color: #1365a8;
+	color: white;
 }
 
 button:hover{
 	background-color: #1365a8;
+}
+
+button:visited{
+	border:none;
+}
+
+.white-text{
+	color: white;
 }

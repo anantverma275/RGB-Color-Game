@@ -33,7 +33,7 @@ function resetThings(){
 	head.textContent = colorCode.toUpperCase();
 	displayStatus.textContent = "";
 	if(buttonRetry.textContent == "Play Again")
-		buttonRetry.textContent = "New Colors";
+		buttonRetry.textContent = "NEW COLORS";
 }
 
 setColors(n);
@@ -75,3 +75,27 @@ hardButton.addEventListener("click", function(){
 	easyButton.classList.remove("selected");
 	hardButton.classList.add("selected");
 })
+
+easyButton.addEventListener("mouseover", function(){
+		this.classList.add("white-text");
+});
+
+easyButton.addEventListener("mouseout", function(){
+		this.classList.remove("white-text");
+});
+
+hardButton.addEventListener("mouseover", function(){
+		this.classList.add("white-text");
+});
+
+hardButton.addEventListener("mouseout", function(){
+		this.classList.remove("white-text");
+});
+
+buttonRetry.addEventListener("mouseover", function(){
+		this.classList.add("white-text");
+});
+
+buttonRetry.addEventListener("mouseout", function(){
+		this.classList.remove("white-text");
+});
